@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wedding Invitation</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Great+Vibes&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
             --gold: #D4AF37;
@@ -29,139 +29,116 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 20px;
+            padding: 15px;
         }
 
         .card-container {
             background: #ffffff;
-            max-width: 500px;
+            max-width: 450px;
             width: 100%;
             border: 3px solid var(--gold);
             border-radius: 15px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-            padding: 40px 30px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            padding: 35px 20px;
             text-align: center;
             position: relative;
-            overflow: hidden;
         }
 
-        /* Traditional Border Accents */
+        /* Border Corners */
         .card-container::before, .card-container::after {
             content: "";
             position: absolute;
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             border: 2px solid var(--gold);
         }
-        .card-container::before { top: 15px; left: 15px; border-right: none; border-bottom: none; }
-        .card-container::after { bottom: 15px; right: 15px; border-left: none; border-top: none; }
+        .card-container::before { top: 12px; left: 12px; border-right: none; border-bottom: none; }
+        .card-container::after { bottom: 12px; right: 12px; border-left: none; border-top: none; }
 
         .blessing {
             font-family: 'Cinzel', serif;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: var(--maroon);
             letter-spacing: 2px;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             font-weight: 700;
         }
 
         .invitation-text {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
-            letter-spacing: 3px;
-            color: #777;
-            margin-bottom: 10px;
+            letter-spacing: 2px;
+            color: #666;
+            line-height: 1.6;
         }
 
         .parents-names {
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 500;
             color: var(--text-dark);
-            margin-bottom: 30px;
-            line-height: 1.6;
+            margin-top: 5px;
+            margin-bottom: 20px;
         }
 
         .couple-names {
             font-family: 'Great Vibes', cursive;
-            font-size: 3.5rem;
+            font-size: 3.2rem;
             color: var(--maroon);
-            margin: 20px 0;
-            line-height: 1.2;
+            margin: 15px 0;
+            line-height: 1.1;
         }
 
         .ampersand {
             font-family: 'Cinzel', serif;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             color: var(--gold);
             display: block;
-            margin: 5px 0;
+            margin: 2px 0;
         }
 
         .event-details {
             border-top: 1px solid rgba(212, 175, 55, 0.3);
             border-bottom: 1px solid rgba(212, 175, 55, 0.3);
-            padding: 20px 0;
-            margin: 30px 0;
+            padding: 15px 0;
+            margin: 25px 0;
         }
 
         .event-title {
             font-family: 'Cinzel', serif;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             color: var(--maroon);
             letter-spacing: 1px;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
+            font-weight: 700;
         }
 
         .date-time, .venue {
-            font-size: 0.95rem;
-            margin-bottom: 8px;
+            font-size: 0.9rem;
+            margin-bottom: 6px;
             color: var(--text-dark);
+            line-height: 1.4;
         }
 
         .venue strong {
             color: var(--maroon);
         }
 
-        /* Countdown Timer */
-        .countdown-container {
-            margin-top: 25px;
-        }
-        .countdown-title {
-            font-size: 0.8rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #777;
-            margin-bottom: 10px;
-        }
-        .timer {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-        .time-box {
-            background: var(--maroon);
-            color: #fff;
-            padding: 10px;
-            border-radius: 8px;
-            min-width: 60px;
-        }
-        .time-box span {
-            display: block;
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
-        .time-box label {
-            font-size: 0.65rem;
-            text-transform: uppercase;
+        .celebration-message {
+            font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            color: var(--maroon);
             letter-spacing: 1px;
-            opacity: 0.8;
+            font-weight: 700;
+            margin: 20px 0;
         }
 
         .footer-compliments {
-            margin-top: 30px;
+            margin-top: 25px;
+            padding-top: 15px;
+            border-top: 1px dashed rgba(212, 175, 55, 0.3);
             font-size: 0.85rem;
-            color: #555;
-            line-height: 1.5;
+            color: #444;
+            line-height: 1.6;
         }
     </style>
 </head>
@@ -170,12 +147,10 @@
     <div class="card-container">
         <div class="blessing">|| SHREE GANESHAY NAMAH ||</div>
         
-        <div class="invitation-text">With the heavenly blessings of<br><strong>Late Shiv Kumar Singh</strong></div>
-        <div class="parents-names">
-            Smt. Sarika Singh & Family
-        </div>
+        <div class="invitation-text">With the heavenly blessings of<br><strong style="color: var(--maroon);">Late Shiv Kumar Singh</strong></div>
+        <div class="parents-names">Smt. Sarika Singh & Family</div>
 
-        <div class="invitation-text" style="margin-top: 20px;">Cordialy invite you to celebrate the Wedding Ceremony of</div>
+        <div class="invitation-text" style="margin-top: 15px;">Cordially invite you to celebrate the Wedding Ceremony of</div>
 
         <div class="couple-names">
             Shivangi
@@ -193,13 +168,8 @@
             </div>
         </div>
 
-        <div class="countdown-container">
-            <div class="countdown-title">Counting down to the big day</div>
-            <div class="timer">
-                <div class="time-box"><span id="days">00</span><label>Days</label></div>
-                <div class="time-box"><span id="hours">00</span><label>Hrs</label></div>
-                <div class="time-box"><span id="minutes">00</span><label>Mins</label></div>
-            </div>
+        <div class="celebration-message">
+            ✨ Memories to Cherish Forever ✨
         </div>
 
         <div class="footer-compliments">
@@ -207,31 +177,6 @@
             Krishn Pratap Singh (KPS) & All Relatives
         </div>
     </div>
-
-    <script>
-        // Set the wedding date countdown (April 26, 2026)
-        const weddingDate = new Date("April 26, 2026 13:00:00").getTime();
-
-        const timerInterval = setInterval(function() {
-            const now = new Date().getTime();
-            const distance = weddingDate - now;
-
-            // Calculations for days, hours, and minutes
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-
-            // Display results
-            if (distance > 0) {
-                document.getElementById("days").innerText = days < 10 ? "0" + days : days;
-                document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
-                document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
-            } else {
-                clearInterval(timerInterval);
-                document.querySelector(".countdown-container").innerHTML = "<div class='event-title'>The Celebration Has Begun!</div>";
-            }
-        }, 1000);
-    </script>
 
 </body>
 </html>
