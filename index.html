@@ -1,1 +1,237 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Wedding Invitation</title> <!-- Google Fonts for Elegant Typography --> <link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500&family=Great+Vibes&display=swap" rel="stylesheet"> <style> :root { --primary-color: #721c24; --bg-color: #fff9f6; --text-color: #333333; --accent-color: #d4af37; /* Gold */ --card-bg: #ffffff; } * { box-sizing: border-box; margin: 0; padding: 0; } body { font-family: 'Montserrat', sans-serif; background-color: var(--bg-color); color: var(--text-color); line-height: 1.6; overflow-x: hidden; } /* --- OVERLAY / WAX SEAL SCREEN --- */ #reveal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #8b1e2a; /* Deep elegant red */ display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 9999; transition: opacity 1s ease, transform 1s ease; color: #ffffff; text-align: center; padding: 20px; } .envelope-text { font-family: 'Cinzel', serif; font-size: 1.5rem; letter-spacing: 2px; margin-bottom: 40px; } .wax-seal { width: 100px; height: 100px; background: #cc9933; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-family: 'Great Vibes', cursive; font-size: 2.5rem; color: #fff; box-shadow: 0 10px 20px rgba(0,0,0,0.3), inset 0 0 10px rgba(0,0,0,0.2); cursor: pointer; border: 3px double #fff; animation: pulse 2s infinite; user-select: none; } .tap-instruction { margin-top: 20px; font-size: 0.9rem; letter-spacing: 3px; text-transform: uppercase; opacity: 0.8; } @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } } /* --- MAIN CONTAINER --- */ .main-content { max-width: 480px; /* Locked to smartphone screen preview width */ margin: 0 auto; background: var(--card-bg); min-height: 100vh; box-shadow: 0 0 20px rgba(0,0,0,0.05); padding: 30px 20px; display: none; /* Shown after seal tap */ opacity: 0; transition: opacity 1s ease; } /* --- TRADITIONAL HEADER --- */ .tradition-header { text-align: center; font-size: 0.85rem; color: var(--primary-color); margin-bottom: 30px; font-weight: 500; } /* --- COUPLE NAMES SECTION --- */ .couple-section { text-align: center; margin-bottom: 40px; } .couple-names { font-family: 'Great Vibes', cursive; font-size: 3.5rem; color: var(--primary-color); line-height: 1.2; margin: 15px 0; } .parent-names { font-size: 0.9rem; color: #666; font-style: italic; } /* --- COUNTDOWN TIMER --- */ .countdown-container { background: #fff5f5; border: 1px dashed var(--primary-color); border-radius: 8px; padding: 15px; text-align: center; margin-bottom: 40px; } .countdown-title { font-family: 'Cinzel', serif; font-size: 0.9rem; color: var(--primary-color); margin-bottom: 10px; letter-spacing: 1px; } .timer { display: flex; justify-content: space-around; } .time-box span { display: block; font-size: 1.5rem; font-weight: bold; color: var(--primary-color); } .time-box label { font-size: 0.7rem; text-transform: uppercase; color: #666; } /* --- TIMELINE / EVENTS --- */ .section-title { font-family: 'Cinzel', serif; text-align: center; color: var(--primary-color); margin-bottom: 25px; letter-spacing: 2px; border-bottom: 1px solid var(--accent-color); padding-bottom: 5px; } .event-card { background: #fafafa; border-left: 4px solid var(--primary-color); padding: 20px; margin-bottom: 20px; border-radius: 0 8px 8px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.02); } .event-name { font-family: 'Cinzel', serif; font-size: 1.2rem; color: var(--primary-color); margin-bottom: 5px; } .event-time { font-size: 0.9rem; font-weight: 500; color: var(--accent-color); margin-bottom: 10px; } .event-details { font-size: 0.9rem; color: #555; margin-bottom: 15px; } .btn-maps { display: inline-block; background: var(--primary-color); color: #fff; text-decoration: none; padding: 8px 15px; font-size: 0.8rem; border-radius: 4px; text-transform: uppercase; letter-spacing: 1px; transition: background 0.3s; } .btn-maps:hover { background: #561218; } /* --- RSVP FORM --- */ .rsvp-section { margin-top: 40px; background: #fffcf7; padding: 25px 20px; border-radius: 8px; border: 1px solid #eee; } .form-group { margin-bottom: 15px; } .form-group label { display: block; font-size: 0.85rem; font-weight: 500; margin-bottom: 5px; color: #444; } .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-family: 'Montserrat', sans-serif; font-size: 0.9rem; } .btn-submit { width: 100%; background: var(--primary-color); color: #fff; border: none; padding: 12px; font-size: 1rem; font-family: 'Cinzel', serif; letter-spacing: 1px; border-radius: 4px; cursor: pointer; margin-top: 10px; } /* --- FOOTER --- */ .footer { text-align: center; margin-top: 40px; font-size: 0.8rem; color: #999; font-family: 'Cinzel', serif; } </style> </head> <body> <!-- 1. DIGITAL WAX SEAL OVERLAY SCREEN --> <div id="reveal-overlay" onclick="revealInvitation()"> <div class="envelope-text">WEDDING INVITATION</div> <!-- Replace 'M & A' with your initials --> <div class="wax-seal">K & S</div> <div class="tap-instruction">Tap to Open</div> </div> <!-- 2. MAIN MOBILE-FIRST WEBSITE LAYOUT --> <div class="main-content" id="mainCard"> <!-- Traditional Blessing Top Header --> <div class="tradition-header"> ॥ श्री गणेशाय नमः ॥<br> "With the blessings of God and family, we joyfully invite you to celebrate our union." </div> <!-- Couple Names & Background Details --> <div class="couple-section"> <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem;">The Wedding of</p> <!-- CHANGE BRIDE & GROOM NAMES HERE --> <div class="couple-names">Bride Name<br>&<br>Groom Name</div> <!-- CHANGE PARENT NAMES HERE --> <div class="parent-names"> Daughter of Mr. & Mrs. BRIDE_PARENTS_NAMES<br> &<br> Son of Mr. & Mrs. GROOM_PARENTS_NAMES </div> </div> <!-- Countdown Timer --> <div class="countdown-container"> <div class="countdown-title">Counting Down to the Big Day</div> <div class="timer"> <div class="time-box"><span id="days">00</span><label>Days</label></div> <div class="time-box"><span id="hours">00</span><label>Hours</label></div> <div class="time-box"><span id="minutes">00</span><label>Mins</label></div> <div class="time-box"><span id="seconds">00</span><label>Secs</label></div> </div> </div> <!-- Events Timeline Section --> <h2 class="section-title">Events Schedule</h2> <!-- EVENT 1: SANGEET --> <div class="event-card"> <!-- CHANGE EVENT NAME, DATE & TIME --> <div class="event-name">Sangeet & Ring Ceremony</div> <div class="event-time">Friday, 15th January 2027 | 7:00 PM Onwards</div> <div class="event-details"> <strong>Dress Code:</strong> Ethnic Traditional / Vibrant Colors<br> <strong>Venue:</strong> VENUE_NAME_HERE, Street Name, Area, City Name </div> <!-- PASTE YOUR GOOGLE MAP LINK IN THE HREF BELOW --> <a href="https://maps.google.com" target="_blank" class="btn-maps">Get Directions</a> </div> <!-- EVENT 2: THE WEDDING --> <div class="event-card"> <!-- CHANGE EVENT NAME, DATE & TIME --> <div class="event-name">The Wedding Ceremony (Phere)</div> <div class="event-time">Saturday, 16th January 2027 | 8:00 PM Onwards</div> <div class="event-details"> <strong>Dress Code:</strong> Royal Traditional Wear<br> <strong>Venue:</strong> VENUE_NAME_HERE, Street Name, Area, City Name </div> <!-- PASTE YOUR GOOGLE MAP LINK IN THE HREF BELOW --> <a href="https://maps.google.com" target="_blank" class="btn-maps">Get Directions</a> </div> <!-- RSVP Tracker Form Section --> <div class="rsvp-section"> <h2 class="section-title" style="margin-bottom: 15px; font-size: 1.3rem;">Will You Attend?</h2> <!-- RSVP ACTION FORM: Go to Formspree.io, make a free account, create a form, and replace the 'your_formspree_id' below with the ID they give you. --> <form action="https://formspree.io/f/your_formspree_id" method="POST"> <div class="form-group"> <label for="name">Your Name</label> <input type="text" id="name" name="Guest Name" placeholder="Enter your full name" required> </div> <div class="form-group"> <label for="attendance">Will you join us?</label> <select id="attendance" name="Attendance Status" required> <option value="" disabled selected>Select an option</option> <option value="Joyfully Accept">Joyfully Accept</option> <option value="Regretfully Decline">Regretfully Decline</option> </select> </div> <div class="form-group"> <label for="guests">Total Attending Members</label> <select id="guests" name="Total Guests"> <option value="1">1 (Just me)</option> <option value="2">2 Members</option> <option value="3">3 Members</option> <option value="4">4+ Members</option> </select> </div> <div class="form-group"> <label for="song">A song that will get you onto the dance floor?</label> <input type="text" id="song" name="Song Request" placeholder="Song title / Artist name"> </div> <button type="submit" class="btn-submit">Submit RSVP</button> </form> </div> <div class="footer"> With Love,<br>The Family Members </div> </div> <!-- AUDIO BACKING TRACK (Optional) --> <!-- Simply replace the source URL below with a direct link to any .mp3 file if you want background music --> <audio id="bgMusic" loop> <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg"> </audio> <!-- --- INTERACTIONS & CONTROLS --- --> <script> // 1. Function to handle the Digital Wax Seal click function revealInvitation() { const overlay = document.getElementById('reveal-overlay'); const mainCard = document.getElementById('mainCard'); const music = document.getElementById('bgMusic'); // Fade out overlay screen overlay.style.opacity = '0'; overlay.style.transform = 'scale(1.2)'; setTimeout(() => { overlay.style.display = 'none'; // Reveal main interactive invite mainCard.style.display = 'block'; setTimeout(() => { mainCard.style.opacity = '1'; }, 50); // Attempt to auto-play background music track safely music.play().catch(error => { console.log("Audio autoplay prevented by modern browser rules. Requires explicit interaction."); }); }, 1000); } // 2. Automated Countdown Timer Math logic // SET YOUR WEDDING DATE HERE (Format: Month Day, Year Hour:Minute:Second) const targetWeddingDate = new Date("Jan 16, 2027 20:00:00").getTime(); const timerInterval = setInterval(function() { const now = new Date().getTime(); const difference = targetWeddingDate - now; // Math rules to separate time elements const d = Math.floor(difference / (1000 * 60 * 60 * 24)); const h = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)); const m = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)); const s = Math.floor((difference % (1000 * 60)) / 1000); // Print numbers safely inside view containers document.getElementById("days").innerText = d < 10 ? "0" + d : d; document.getElementById("hours").innerText = h < 10 ? "0" + h : h; document.getElementById("minutes").innerText = m < 10 ? "0" + m : m; document.getElementById("seconds").innerText = s < 10 ? "0" + s : s; // Stop calculating if target wedding date passes completely if (difference < 0) { clearInterval(timerInterval); document.querySelector(".countdown-container").innerHTML = "<div class='countdown-title'>The Celebration Has Begun!</div>"; } }, 1000); </script> </body> </html>to 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Great+Vibes&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --maroon: #6B1D2F;
+            --cream: #FFFDF9;
+            --text-dark: #333333;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--cream);
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            background-image: radial-gradient(rgba(212, 175, 55, 0.05) 1px, transparent 0);
+            background-size: 24px 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .card-container {
+            background: #ffffff;
+            max-width: 500px;
+            width: 100%;
+            border: 3px solid var(--gold);
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Traditional Border Accents */
+        .card-container::before, .card-container::after {
+            content: "";
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border: 2px solid var(--gold);
+        }
+        .card-container::before { top: 15px; left: 15px; border-right: none; border-bottom: none; }
+        .card-container::after { bottom: 15px; right: 15px; border-left: none; border-top: none; }
+
+        .blessing {
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            color: var(--maroon);
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        .invitation-text {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #777;
+            margin-bottom: 10px;
+        }
+
+        .parents-names {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .couple-names {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.5rem;
+            color: var(--maroon);
+            margin: 20px 0;
+            line-height: 1.2;
+        }
+
+        .ampersand {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            color: var(--gold);
+            display: block;
+            margin: 5px 0;
+        }
+
+        .event-details {
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 20px 0;
+            margin: 30px 0;
+        }
+
+        .event-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.3rem;
+            color: var(--maroon);
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .date-time, .venue {
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+
+        .venue strong {
+            color: var(--maroon);
+        }
+
+        /* Countdown Timer */
+        .countdown-container {
+            margin-top: 25px;
+        }
+        .countdown-title {
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #777;
+            margin-bottom: 10px;
+        }
+        .timer {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        .time-box {
+            background: var(--maroon);
+            color: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            min-width: 60px;
+        }
+        .time-box span {
+            display: block;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .time-box label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+        }
+
+        .footer-compliments {
+            margin-top: 30px;
+            font-size: 0.85rem;
+            color: #555;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card-container">
+        <div class="blessing">|| SHREE GANESHAY NAMAH ||</div>
+        
+        <div class="invitation-text">With the heavenly blessings of<br><strong>Late Shiv Kumar Singh</strong></div>
+        <div class="parents-names">
+            Smt. Sarika Singh & Family
+        </div>
+
+        <div class="invitation-text" style="margin-top: 20px;">Cordialy invite you to celebrate the Wedding Ceremony of</div>
+
+        <div class="couple-names">
+            Shivangi
+            <span class="ampersand">&</span>
+            Karan
+        </div>
+
+        <div class="event-details">
+            <div class="event-title">Wedding Ceremony</div>
+            <div class="date-time"><strong>Sunday, April 26, 2026</strong></div>
+            <div class="date-time">Time: 1:00 PM onwards</div>
+            <div class="venue">
+                Venue: <strong>Bhagwati Palace</strong>,<br>
+                Shyam Nagar, Kanpur, Uttar Pradesh
+            </div>
+        </div>
+
+        <div class="countdown-container">
+            <div class="countdown-title">Counting down to the big day</div>
+            <div class="timer">
+                <div class="time-box"><span id="days">00</span><label>Days</label></div>
+                <div class="time-box"><span id="hours">00</span><label>Hrs</label></div>
+                <div class="time-box"><span id="minutes">00</span><label>Mins</label></div>
+            </div>
+        </div>
+
+        <div class="footer-compliments">
+            <strong>With Best Compliments From:</strong><br>
+            Krishn Pratap Singh (KPS) & All Relatives
+        </div>
+    </div>
+
+    <script>
+        // Set the wedding date countdown (April 26, 2026)
+        const weddingDate = new Date("April 26, 2026 13:00:00").getTime();
+
+        const timerInterval = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            // Calculations for days, hours, and minutes
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+            // Display results
+            if (distance > 0) {
+                document.getElementById("days").innerText = days < 10 ? "0" + days : days;
+                document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+                document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+            } else {
+                clearInterval(timerInterval);
+                document.querySelector(".countdown-container").innerHTML = "<div class='event-title'>The Celebration Has Begun!</div>";
+            }
+        }, 1000);
+    </script>
+
+</body>
+</html>
